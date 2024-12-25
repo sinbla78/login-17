@@ -1,10 +1,11 @@
 # database Setting
+# database Setting
 spring:
   datasource:
-    driver-class-name: ${DB_DRIVER}
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: yhm75040611?
   jpa:
     hibernate:
       ddl-auto: update
@@ -12,10 +13,9 @@ spring:
       hibernate:
         format_sql: true
         show_sql: true
-
 jwt:
-  prefix: ${JWT_PREFIX}
-  header: ${JWT_HEADER}
-  secret: ${JWT_SECRET}
-  accessExpiration: ${JWT_ACCESS_TIME}
-  refreshExpiration: ${JWT_REFRESH_TIME}
+  prefix: Authorization
+  header: Bearer
+  secret: dcfeacefeafefefefdfdcfeacefeafefefefdfdcfeacefeafefefefdfdcfeacefeafefefefdf
+  accessExpiration: 7200
+  refreshExpiration: 300
